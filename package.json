@@ -1,0 +1,35 @@
+{
+  "name": "flappy",
+  "version": "1.0.0",
+  "description": "A modern, polished, and beginner-friendly remake of the classic Flappy Bird arcade game built purely with Vanilla HTML5 Canvas and the Web Audio API.",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host",
+    "build": "vite build",
+    "preview": "vite preview",
+    "cap:add:android": "npx cap add android",
+    "cap:sync": "npx cap sync",
+    "android:apk": "vite build && npx cap sync android && cd android && .\\gradlew.bat assembleDebug"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/farhan-debugs/Flappy-Game.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/farhan-debugs/Flappy-Game/issues"
+  },
+  "homepage": "https://github.com/farhan-debugs/Flappy-Game#readme",
+  "devDependencies": {
+    "@capacitor/cli": "^8.5.3",
+    "vite": "^8.3.4"
+  },
+  "dependencies": {
+    "@capacitor/android": "^8.5.3",
+    "@capacitor/core": "^8.5.3",
+    "@capacitor/haptics": "^8.0.2",
+    "@capacitor/status-bar": "^8.0.4"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "appId": "com.farhan.flappy",
+  "appName": "Flappy Game",
+  "webDir": "dist",
+  "server": {
+    "androidScheme": "https"
+  },
+  "android": {
+    "backgroundColor": "#0f172a"
+  }
+}

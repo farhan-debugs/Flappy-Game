@@ -1,80 +1,138 @@
-# 🐤 Flappy Bird Web Game
+# 🐤 Flappy Bird - Cross-Platform Edition (Android & Windows)
 
-A modern, polished, and beginner-friendly remake of the classic Flappy Bird arcade game built purely with Vanilla HTML5 Canvas and the Web Audio API.
+A modern, high-performance, and visually stunning remake of the classic Flappy Bird arcade game built for **both Windows and Android** using **Vite**, **HTML5 Canvas**, **Web Audio API**, **PWA**, and **Capacitor**.
 
-🎮 **[Play Live Demo Here](https://farhan-debugs.github.io/Flappy-Game/)**
-
----
-
-## 🌟 Overview
-
-This project is a revitalized version of the iconic Flappy Bird experience. It replaces rudimentary shapes with an animated, expressive yellow bird, features smooth and forgiving physics for enjoyable gameplay, and includes native procedural sound effects with zero external assets or dependencies.
+🎮 **[Play Live Web Demo](https://farhan-debugs.github.io/Flappy-Game/)**
 
 ---
 
-## ✨ Features
+## 🌟 Tech Stack Selection
 
-- **🟡 Procedural Animated Yellow Bird:**
-  - Rendered entirely on HTML5 Canvas.
-  - Features expressive cartoon eyes, beak, rosy cheeks, tail feathers, and dynamic wing flapping animations.
-  - Dynamic flight pitch: tilts upward when flapping and glides downward when falling.
+To make this game fully accessible and native-feeling on **both Android and Windows** with a single unified codebase, we transitioned to a modern cross-platform stack:
 
-- **🪶 Forgiving & Balanced Physics:**
-  - Tuned jump strength and gentle gravity for smooth, comfortable controls.
-  - Capped maximum fall speed to prevent sudden, uncontrollable drops.
-  - Roomier pipe clearances and forgiving collision boundaries to keep gameplay fun and accessible.
-  - Ceiling clamp protection so grazing the top doesn't result in instant defeat.
-
-- **🎵 Native Web Audio API Sound Effects:**
-  - **Score Chime:** Crisp, retro ascending two-tone coin sound on every passed pipe.
-  - **Game Over Impact:** Punchy impact thump combined with a descending defeat slide.
-  - **Zero Audio Lag:** Generated synthetically in real time without external MP3 files.
-
-- **📱 Fully Responsive & Cross-Platform:**
-  - Works seamlessly across desktop and mobile browsers with both keyboard, mouse, and touch tap controls.
+| Component | Technology | Purpose |
+| :--- | :--- | :--- |
+| **Engine** | **HTML5 Canvas API + ES Modules** | 60+ FPS hardware-accelerated rendering, Retina/High-DPI scaling (`devicePixelRatio`). |
+| **Bundler & Dev Server** | **Vite** | Lightning-fast HMR, instant startup, and optimized production bundle (`dist/`). |
+| **Native Mobile Bridge** | **Capacitor 8 (`@capacitor/android`)** | Native Android project generation, Android Studio integration, and APK compilation. |
+| **Haptics** | **`@capacitor/haptics` + Vibration API** | Physical feedback on flaps, milestones, and crashes across both Android devices and mobile browsers. |
+| **Audio Engine** | **Web Audio API (Procedural Synthesizer)** | Zero-latency, zero-dependency audio with auto-unlock on touch/click gestures. |
+| **Offline & PWA** | **Service Worker + Web App Manifest** | 100% offline playability and "Install App" support for Windows (Edge/Chrome) & Android. |
 
 ---
 
-## 🕹️ Controls
+## ✨ Cross-Platform Features
 
-| Action | Desktop (Keyboard) | Desktop (Mouse) | Mobile / Tablet |
+- **📱 Android Support:**
+  - **Native Android App (`android/`):** Complete Gradle & Android Studio project ready to compile into `.apk` / `.aab`.
+  - **Safe Area Insets & Notch Handling:** Responsive dynamic scaling for 16:9, 18:9, 19.5:9, and 20:9 aspect ratios.
+  - **Haptic Vibration:** Tactile vibration pulses on wing flaps, scoring chimes, and collisions.
+  - **Touch & Gesture Optimized:** Zero-delay touch controls with pinch-zoom & scroll rubberbanding prevented (`touch-action: none`).
+  - **PWA / Add to Home Screen:** Can also be installed directly from any mobile browser with custom app icon and splash screen.
+
+- **💻 Windows Support:**
+  - **Desktop Browser Play:** Run instantly in Chrome, Edge, Firefox, or Brave.
+  - **Desktop PWA App Mode:** Install as a standalone Windows desktop app with its own taskbar icon and window frame via the "Install App" button.
+  - **Desktop Controls:** Keyboard support (<kbd>Space</kbd>, <kbd>Arrow Up</kbd>, <kbd>W</kbd>, <kbd>Esc</kbd>, <kbd>M</kbd>, <kbd>R</kbd>) + Mouse click.
+  - **Crisp High-DPI:** Sharp vector rendering across 1080p, 1440p, and 4K PC monitors.
+
+- **🎮 Enhanced Gameplay:**
+  - Procedural animated yellow bird with inertia banking, feather detail, and wing flap physics.
+  - Dynamic particle systems: feather bursts on impact, wind trails, and floating `+1` score popups.
+  - Parallax sky, stylized drifting clouds, and skyline scenery.
+  - Persistent High Score system via `localStorage`.
+  - Medal achievement system (🥉 Bronze, 🥈 Silver, 🥇 Gold, 💎 Platinum).
+  - In-game controls: Mute audio toggle, Pause/Resume, Fullscreen toggle, and Play Again.
+
+---
+
+## 🕹️ Controls Guide
+
+| Action | Windows (Keyboard) | Windows (Mouse) | Android (Touch) |
 | :--- | :--- | :--- | :--- |
-| **Start / Flap** | <kbd>Space</kbd> | Left Click | Tap Screen |
-| **Restart Game** | <kbd>Space</kbd> or <kbd>Enter</kbd> | Left Click | Tap Screen |
+| **Flap / Jump** | <kbd>Space</kbd> / <kbd>W</kbd> / <kbd>▲</kbd> | Left Click | Tap Screen |
+| **Start / Restart** | <kbd>Space</kbd> / <kbd>R</kbd> | Left Click | Tap Screen / "Play Again" |
+| **Pause / Resume** | <kbd>Esc</kbd> / <kbd>P</kbd> | Click ⏸️ button | Tap ⏸️ button |
+| **Toggle Mute** | <kbd>M</kbd> | Click 🔊 button | Tap 🔊 button |
+| **Fullscreen** | <kbd>F11</kbd> | Click ⛶ button | Tap ⛶ button |
 
 ---
 
-## 🚀 Getting Started Locally
+## 🚀 How to Run
 
-No build tools, bundlers, or package installations required!
+### 1. On Windows (Instant Local Play / Dev Server)
 
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/farhan-debugs/Flappy-Game.git
-   ```
-2. **Navigate to the directory:**
-   ```bash
-   cd Flappy-Game
-   ```
-3. **Open the game:**
-   Simply double-click `index.html` or open it with your favorite browser or a local live server extension.
+```bash
+# Install dependencies
+npm install
 
----
+# Start Vite live development server
+npm run dev
+```
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-## 🛠️ Built With
-
-- **HTML5:** Canvas API rendering
-- **CSS3:** Flexbox centering & modern UI gradients
-- **JavaScript (ES6+):** Game loop, physics engine, collision detection, and procedural graphics
-- **Web Audio API:** Real-time audio synthesis
+To install as a native Windows desktop app:
+- Click the **"📲 Install App"** button at the top right, or click the install icon in your browser's address bar (Edge or Chrome).
 
 ---
 
-## 🌐 Live Deployment
+### 2. On Android
 
-Play the game directly in your browser:  
-👉 **[https://farhan-debugs.github.io/Flappy-Game/](https://farhan-debugs.github.io/Flappy-Game/)**
+#### Option A: Run / Build Native Android APK
+Prerequisites: Android Studio or Android SDK installed.
+
+```bash
+# 1. Build web bundle and sync to Android project
+npm run build
+npx cap sync android
+
+# 2. Open project in Android Studio (optional)
+npx cap open android
+
+# 3. Or build the debug APK directly via command line:
+cd android
+.\gradlew.bat assembleDebug
+```
+The output APK is generated at:
+`android/app/build/outputs/apk/debug/app-debug.apk`
+
+#### Option B: Mobile Browser / PWA (Zero Install)
+1. Open the dev server on your local Wi-Fi: `npm run dev -- --host`
+2. Visit `http://<your-pc-ip>:3000` from your Android phone's browser.
+3. Tap **"Install App"** or browser menu -> **"Add to Home screen"**.
 
 ---
 
-Made with ❤️ by [farhan-debugs](https://github.com/farhan-debugs)
+## 📁 Project Architecture
+
+```
+flappy/
+├── android/                   # Native Android Studio / Gradle project
+│   ├── app/src/main/
+│   │   ├── AndroidManifest.xml # Configured with portrait lock & vibration
+│   │   └── assets/public/     # Bundled web assets for Android WebView
+│   ├── build.gradle
+│   └── gradlew.bat
+├── public/                    # Static PWA assets
+│   ├── favicon.svg            # Favicon
+│   ├── icon.svg               # Scalable App Icon
+│   ├── manifest.webmanifest   # PWA Manifest
+│   └── sw.js                  # Offline Service Worker cache
+├── src/                       # Modular source code
+│   ├── audio.js               # Web Audio API sound synthesizer & mute controls
+│   ├── haptics.js             # Capacitor Haptics + Navigator vibration bridge
+│   ├── particles.js           # Feather bursts, puffs, and floating score text
+│   ├── game.js                # Core engine, physics, pipes, medals & canvas loop
+│   ├── styles.css             # Responsive styles, glassmorphism UI & notch insets
+│   └── main.js                # Event listeners, PWA install prompt & app bootstrap
+├── capacitor.config.json      # Capacitor project configuration
+├── index.html                 # HTML5 entry point
+├── package.json               # Node.js dependencies and scripts
+└── vite.config.js             # Vite bundler configuration
+```
+
+---
+
+## 📜 License
+
+MIT License. Made with ❤️ by [farhan-debugs](https://github.com/farhan-debugs).
