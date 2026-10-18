@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="64" height="64">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#0284c7"/>
+    </linearGradient>
+    <linearGradient id="body" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#fef08a"/>
+      <stop offset="60%" stop-color="#facc15"/>
+      <stop offset="100%" stop-color="#eab308"/>
+    </linearGradient>
+    <linearGradient id="beak" x1="0%" y1="0%" x2="100%" y2="50%">
+      <stop offset="0%" stop-color="#fb923c"/>
+      <stop offset="100%" stop-color="#ea580c"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="115" fill="url(#bg)"/>
+  <g transform="translate(15, 10)">
+    <path d="M 170 270 L 105 240 L 125 285 L 95 320 L 175 300 Z" fill="#eab308" stroke="#854d0e" stroke-width="12" stroke-linejoin="round"/>
+    <ellipse cx="255" cy="275" rx="115" ry="95" fill="url(#body)" stroke="#854d0e" stroke-width="14"/>
+    <ellipse cx="230" cy="310" rx="70" ry="48" fill="#fef9c3"/>
+    <ellipse cx="205" cy="270" rx="55" ry="38" fill="#fde047" stroke="#ca8a04" stroke-width="12" transform="rotate(-15, 205, 270)"/>
+    <path d="M 330 250 L 430 285 L 330 320 Z" fill="url(#beak)" stroke="#9a3412" stroke-width="12" stroke-linejoin="round"/>
+    <line x1="330" y1="285" x2="415" y2="285" stroke="#7c2d12" stroke-width="8" stroke-linecap="round"/>
+    <circle cx="280" cy="305" r="22" fill="#f43f5e" opacity="0.5"/>
+    <circle cx="310" cy="235" r="40" fill="#ffffff" stroke="#854d0e" stroke-width="12"/>
+    <circle cx="325" cy="235" r="18" fill="#0f172a"/>
+    <circle cx="318" cy="225" r="7" fill="#ffffff"/>
+  </g>
+</svg>

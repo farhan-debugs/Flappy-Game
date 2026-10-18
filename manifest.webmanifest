@@ -1,0 +1,19 @@
+{
+  "name": "Flappy Bird - Cross-Platform Edition",
+  "short_name": "Flappy Bird",
+  "description": "Crisp, responsive, high-performance Flappy Bird game accessible on both Android and Windows with touch and keyboard controls.",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#0f172a",
+  "theme_color": "#38bdf8",
+  "icons": [
+    {
+      "src": "./icon.svg",
+      "sizes": "192x192 512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["games", "arcade"]
+}
