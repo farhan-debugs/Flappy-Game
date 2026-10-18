@@ -2,7 +2,10 @@
 
 A modern, high-performance, and visually stunning remake of the classic Flappy Bird arcade game built for **both Windows and Android** using **Vite**, **HTML5 Canvas**, **Web Audio API**, **PWA**, and **Capacitor**.
 
-🎮 **[Play Live Web Demo](https://farhan-debugs.github.io/Flappy-Game/)**
+🎮 **[Play Live Web Demo](https://farhan-debugs.github.io/Flappy-Game/)** &nbsp;&bull;&nbsp; 🤖 **[Direct Download Android APK](./public/flappy-bird.apk)**
+
+> [!TIP]
+> **Android Users**: You can directly download and install the ready-to-run APK: [**Download flappy-bird.apk**](./public/flappy-bird.apk). No compiling or Android Studio required!
 
 ---
 
